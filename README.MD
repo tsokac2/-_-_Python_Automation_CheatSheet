@@ -15,7 +15,6 @@ This comprehensive course is designed to equip learners with the ability to auto
 
 ### Learning Outcomes
 Upon completion, learners will:
-
 - Automate diverse tasks using Python
 - Build an extensive GitHub portfolio
 - Enhance skills through independent exercises
