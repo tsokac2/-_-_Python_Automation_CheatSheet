@@ -1,7 +1,7 @@
 <h1 align="center">Automate Everything with Python</h1>
 
 ### Repo overview
-* **[Browser Automation and Web Scraping]()**
+* **[Browser Automation and Web Scraping](https://github.com/tsokac2/-_-_Python_Automation_CheatSheet/blob/main/%2301_Browser_Automation_and_Web_Scraping.MD)**
 
 #
 ### Overview
