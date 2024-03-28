@@ -3,6 +3,7 @@
 ### Overview of the Section
 * **[Scraping with Selenium](#selenium)**
 * **[Automate Login Process](#auto-login)**
+* **[Beautiful Soup for Web Scraping](#bs4)**
 
 #
 ### <a name="selenium">Scraping with Selenium</a>
