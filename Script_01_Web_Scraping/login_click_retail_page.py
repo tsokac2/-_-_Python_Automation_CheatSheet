@@ -1,10 +1,6 @@
-# Webpage source: https://onlinesim.io/auth/login?redirect=/v2/numbers
-
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
-from datetime import datetime as dt
-
 
 def get_driver():
     # Set option to make browsing easier
