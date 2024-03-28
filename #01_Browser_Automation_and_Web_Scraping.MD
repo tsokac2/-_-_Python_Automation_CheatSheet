@@ -67,3 +67,30 @@ Overall, the script automates the login process by filling in the credentials, s
 
 **[Back To The Top](#Overview-of-the-Section)**
 #
+
+### <a name="bs4">Beautiful Soup for Web Scraping</a>
+
+**Extracting Currency Rates with Beautiful Soup**
+
+- We'll use https://www.x-rates.com/ to s real-time currency exchangrates.
+- The script will take two currencies as input and construct a URL for the specific conversion.
+- Beautiful Soup will then parse the HTML content of the webpage.
+
+**Key Steps and Code**
+
+1. Install libraries:
+- ``requests`` - to fetch the webpage content.
+- ``beautifulsoup4`` - to parse the HTML content.
+2. Define a function ``get_currency`` that takes two arguments:
+- ``from_currency``: The starting currency code (e.g., EUR).
+- ``to_currency``: The target currency code (e.g., USD).
+3. Construct the URL for the specific currency conversion.
+4. Use ``requests.get`` to get the webpage content.
+5. Parse the content using ``BeautifulSoup`` with HTML parser.
+6. Find the element containing the exchange rate (likely a span element with a specific class).
+7. Extract the text content of the element using ``.get_text()`` method.
+8. Clean the extracted text to remove unnecessary characters (e.g., currency symbol).
+9. Convert the cleaned text to a float data type.
+10. The function should return the final exchange rate as a float.
+
+**[Back To The Top](#Overview-of-the-Section)**
