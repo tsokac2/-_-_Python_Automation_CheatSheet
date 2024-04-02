@@ -2,6 +2,7 @@
 
 ### Overview of the Section
 * **[REST APIs and Python](#rest-python)**
+* **[Building a Custom API with Flask](#custom-api)**
 
 #
 ### <a name="rest-python">REST APIs and Python</a>
@@ -23,6 +24,37 @@
 
 **[Back To The Top](#Overview-of-the-Section)**
 #
+### <a name="custom-api">Building a Custom API with Flask</a>
+- This video tutorial guides you through creating an API that provides currency exchange rates.
+- **Framework**: Flask (lightweight web framework for Python)
+- **Library for scraping data**: Beautiful Soup
+- **Sample API endpoint**: ``/api/v1/<input_currency>-<output_currency> (e.g., /api/v1/USD-JPY)``
+
+**Key Code Snippets**:
+```
+from flask import Flask, jsonify
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    # Return documentation for the API
+    pass
+
+@app.route("/api/v1/<input_currency>-<output_currency>")
+def get_currency_rate(input_currency, output_currency):
+    # Code to scrape exchange rate data using Beautiful Soup
+    # ...
+    rate = get_currency(input_currency, output_currency)
+    result = {
+        "input_currency": input_currency,
+        "output_currency": output_currency,
+        "rate": rate
+    }
+    return jsonify(result)
+
+# ... (app running code)
+```
 
 
 **[Back To The Top](#Overview-of-the-Section)**
