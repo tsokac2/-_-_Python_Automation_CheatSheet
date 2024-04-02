@@ -10,9 +10,8 @@ import requests
 
 
 # Geting all topics for the specific date range
-
 # def get_news(topic, from_date, to_date, language='en', 
-#              api_key='<your_api_key>'):
+#              api_key='36e6f30176404586a22893235b25572c'):
 #    url = f"https://newsapi.org/v2/everything?qInTitle={topic}&from={from_date}&to={to_date}&sortBy=popularity&language={language}&apiKey={api_key}"
 #    get_Request = requests.get(url)
 #    content = get_Request.json()
@@ -24,10 +23,8 @@ import requests
 
 # print(get_news(topic='space', from_date='2022-02-27', to_date='2022-02-28'))
 
-
 # Geting all headlines by the country
-
-def get_news(country, api_key='<your_api_key>'):
+def get_news(country, api_key='36e6f30176404586a22893235b25572c'):
    url = f"https://newsapi.org/v2/top-headlines?country={country}&apiKey={api_key}"
    get_Request = requests.get(url)
    content = get_Request.json()
