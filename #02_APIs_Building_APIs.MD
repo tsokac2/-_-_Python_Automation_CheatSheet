@@ -3,6 +3,7 @@
 ### Overview of the Section
 * **[REST APIs and Python](#rest-python)**
 * **[Building a Custom API with Flask](#custom-api)**
+* **[Facebook Graph API](#fb-api)**
 
 #
 ### <a name="rest-python">REST APIs and Python</a>
@@ -63,4 +64,43 @@ def get_currency(input_currency, output_currency):
     rate = ...  # Extracted exchange rate
     return rate
 ```
+**[Back To The Top](#Overview-of-the-Section)**
+#
+
+### <a name="fb-api">Facebook Graph API</a>
+
+1. **Using the Official Facebook API via Python**:
+    - Introduces accessing Facebook profiles via Python using the official Facebook API.
+    - Emphasizes that the process is compliant with Facebook's rules and not about hacking.
+    - Highlights the benefit of batch accessing data like photos, videos, posts, and comments.
+
+2. **Creating a Facebook Developer Account**:
+    - Instructs to navigate to developers.facebook.com and create a developer account to access Facebook data programmatically.
+    - Guides through the process of registration, including verifying phone number and email address.
+    - Explains the necessity of creating a Facebook app to access data.
+
+3. **Generating Access Token**:
+    - Demonstrates generating an access token through the Graph API Explorer.
+    - Notes the security feature where newly created Facebook accounts may need to wait for 60 minutes before generating the access token.
+
+4. **Interacting with Graph API Explorer**:
+    - Shows how to use the Graph API Explorer interface to interact with Facebook's API.
+    - Demonstrates querying data such as user ID and name, user posts, and photos.
+    - Illustrates how to generate access tokens for specific permissions.
+
+5. **Accessing Data via Python**:
+    - Provides code snippets to access Facebook data via Python using the requests library.
+    - Explains constructing URLs for API requests and handling response data.
+    - Shows how to access user posts and photos, including iterating over dictionaries to extract specific information.
+
+6. **Downloading Images**:
+    - Guides on downloading images from Facebook via Python, including extracting image URLs and saving images locally.
+
+7. **Exploring API Documentation**:
+    - Mentions accessing Facebook Graph API reference documentation for more detailed information on available endpoints and fields.
+
+8. **Conclusion**:
+    - Concludes by encouraging further exploration of the Facebook API and its limitless possibilities.
+    - Encourages revisiting the video as a starting point for working with the Facebook API.
+
 **[Back To The Top](#Overview-of-the-Section)**
