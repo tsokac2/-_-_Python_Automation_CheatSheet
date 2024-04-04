@@ -1,7 +1,7 @@
 import requests
 import json
 
-api_key = "EAAE0Eu0a7QkBO91hySf2BDzVIcyQpLiXytiYgUU98rfiISFu59FD4WhxMxEdtvZAZBJMZBv7fvZCWZBeZCeChcV5va5Ux95AwlGcVmLMGF8aSvqOUfMfUONGfdkP8P9zpSTjD9enutDL1nZBFrLAcfHPss4JIiXqnWJE0TQfTJHZCb07kPWddDiZBhF4eR8fMHNbEzAkKZCeBAp3TAZC0SXvKJ42WpSLmdpDmT3I0qg1QAVNyLZA65b98gZDZD"
+api_key = "<your_api_access_token>"
 
 url = f"https://graph.facebook.com/v19.0/10232031908089224?fields=id%2Cname&access_token={api_key}"
 response = requests.get(url)
