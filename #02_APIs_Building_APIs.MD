@@ -4,6 +4,7 @@
 * **[REST APIs and Python](#rest-python)**
 * **[Building a Custom API with Flask](#custom-api)**
 * **[Facebook Graph API](#fb-api)**
+* **[Grammar Correction API](#grammar-api)**
 
 #
 ### <a name="rest-python">REST APIs and Python</a>
@@ -102,5 +103,52 @@ def get_currency(input_currency, output_currency):
 8. **Conclusion**:
     - Concludes by encouraging further exploration of the Facebook API and its limitless possibilities.
     - Encourages revisiting the video as a starting point for working with the Facebook API.
+
+**[Back To The Top](#Overview-of-the-Section)**
+#
+### <a name="grammar-api">Grammar Correction API</a>
+
+1. **Importing Libraries**:
+- ``requests``: Used to send requests to the LanguageTool API.
+- ``json`` (optional): Used to convert the response (string) to a Python dictionary for easier data handling.
+
+2. **API Endpoint**:
+- The target URL for grammar checking: https://api.languagetool.org/v2/check
+
+3. **Sending a POST Request**:
+
+- Unlike ``GET`` requests, ``POST`` requests send data to the server.
+- Data is passed as a dictionary with parameters like:
+    - ``text``: The text to be checked for grammar (needs to be JSON-formatted).
+    - ``language``: The language of the text (optional, defaults to "en").
+
+4. **Example Code**:
+```
+# Create a dictionary with parameters
+data = {
+  "text": "This is a nice day. I meant to say date.",  # Text with typos
+  "language": "en"  # Optional, language code
+}
+
+# Send POST request with data
+response = requests.post("https://api.languagetool.org/v2/check", data=data)
+
+# Get the response text
+response_text = response.text
+
+# Convert response text to a dictionary (optional for further processing)
+if desired:
+  import json
+  results = json.loads(response_text)
+```
+
+5. **Processing the Response**: 
+- The response is initially a string.
+- Convert it to a dictionary using json.loads for easier access to details like suggested corrections and error locations.
+
+6. **Extracting Information**:
+- Depending on your application, you can extract various details from the response dictionary, such as:
+    - Suggested corrections for identified errors.
+    - Location (index) of the erroneous word(s) in the original text.
 
 **[Back To The Top](#Overview-of-the-Section)**
