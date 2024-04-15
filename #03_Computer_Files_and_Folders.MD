@@ -59,6 +59,29 @@ The methods used to interact with paths are:
 
 ### <a name="prefix">Add Prefix to Files and Folder</a>
 
+**Working with Paths**:
+Use pathlib.Path to create path objects from file/directory paths (instead of raw strings).
 
+**Important code**:
+```
+from pathlib import Path
+```
+
+**Renaming Files**:
+- Be mindful of the current working directory when creating new file paths.
+- Use ``path.with_name(new_name)`` to create a new path object with the desired filename for the existing path.
+
+**Important code**:
+```
+new_file_path = path.with_name(new_file_name)
+```
+
+**Correct approach to renaming**:
+```
+for path in file_paths:
+  new_file_name = f"new-+{path.stem}{path.suffix}"
+  new_file_path = path.with_name(new_file_name)
+  path.rename(new_file_path)
+```
 **[Back To The Top](#Overview-of-the-Section)**
 #
