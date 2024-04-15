@@ -2,6 +2,7 @@
 
 ### Overview of the Section
 * **[Python Pathlib Library](#path-lib)**
+* **[Add Prefix to Files and Folder](#prefix)**
 
 #
 ### <a name="path-lib">Python Pathlib Library</a>
@@ -56,7 +57,8 @@ The methods used to interact with paths are:
 **[Back To The Top](#Overview-of-the-Section)**
 #
 
-### <a name="path-lib">Python Pathlib Library</a>
+### <a name="prefix">Add Prefix to Files and Folder</a>
+
 
 **[Back To The Top](#Overview-of-the-Section)**
 #
