@@ -3,7 +3,6 @@
 ### Overview of the Section
 * **[Python Pathlib Library](#path-lib)**
 * **[Add Prefix to Files and Folder](#prefix)**
-
 #
 ### <a name="path-lib">Python Pathlib Library</a>
 
@@ -84,4 +83,3 @@ for path in file_paths:
   path.rename(new_file_path)
 ```
 **[Back To The Top](#Overview-of-the-Section)**
-#
