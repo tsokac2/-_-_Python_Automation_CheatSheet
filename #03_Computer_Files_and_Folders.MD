@@ -3,6 +3,10 @@
 ### Overview of the Section
 * **[Python Pathlib Library](#path-lib)**
 * **[Add Prefix to Files and Folder](#prefix)**
+* **[Create Empty Files](#empty-files)**
+* **[Create Archive from Files](#archive-files)**
+* **[Delete Files](#delete-files)**
+
 #
 ### <a name="path-lib">Python Pathlib Library</a>
 
@@ -82,4 +86,91 @@ for path in file_paths:
   new_file_path = path.with_name(new_file_name)
   path.rename(new_file_path)
 ```
+**[Back To The Top](#Overview-of-the-Section)**
+#
+
+### <a name="empty-files">Create Empty Files</a>
+
+**Creating many empty files**:
+
+- This script creates empty files inside a directory called "files".
+- It uses a loop (for i in range(10, 21)) to iterate through a range of numbers.
+- Inside the loop:
+    - Constructs a filename string by combining the number (i) with ".txt" extension (adjust the extension as needed).
+    - Creates a file path object by combining the root directory ("files/") with the filename string.
+    - Uses the os.path.join function (not explicitly mentioned in the text but implied) to create the file path.
+    - Creates the empty file using the path.touch() method.
+
+**Important code**:
+```
+# Assuming you have imported the os module
+# Loop to iterate through a range of numbers (10 to 20)
+
+for i in range(10, 21):
+  # Construct filename string
+  filename = str(i) + ".txt"  # Adjust the extension as needed
+
+  # Create file path object
+  filepath = os.path.join("files", filename)
+
+  # Create the empty file
+  path.touch(filepath)
+```
+
+**Note**:
+
+- The text mentions ``os.path`` module but not ``os.path.join`` function explicitly. However, ``os.path.join`` is commonly used for creating file paths.
+- This code creates 20 files named _"10.txt"_ to _"20.txt"_. You can modify the loop and filename construction to create files with different names.
+
+**[Back To The Top](#Overview-of-the-Section)**
+#
+### <a name="archive-files">Create Archive from Files</a>
+
+**Creating a ZIP file**:
+
+- Libraries: pathlib (for working with file paths) and zipfile (for creating ZIP files).
+- Important code:
+    - ``zip = zipfile.ZipFile(archive_path, 'w')`` # Creates a ZIP file object named ``archive_path`` in write mode ('w').
+    - ``zip.write(file_path)`` # Adds a file ``(file_path)`` to the ZIP archive.
+
+**Iterating through files and adding them to the ZIP**:
+- Use glob to find all files with a specific extension (e.g., .txt).
+- Loop through each file and add it to the ZIP using zip.write(file_path).
+
+**Deleting original files after adding them to the ZIP (Optional)**:
+- Use path.unlink() to delete a file after adding it to the ZIP.
+
+**Note**:
+- The text uses uppercase and lowercase for ``zipfile`` inconsistently. The correct import is ``from zipfile import ZipFile``.
+
+**[Back To The Top](#Overview-of-the-Section)**
+#
+### <a name="delete-files">Delete Files</a>
+
+**Goal**: This script aims to securely delete files by overwriting their contents and then deleting them.
+
+**Important concepts**:
+- ``glob`` module (use with caution): Used to iterate through files in a directory, but be cautious as it can also process subfolders.
+- ``os.path.join(root, file):`` This constructs the full path to each file within the root directory.
+- ``open(path, 'wb'):`` Opens a file in write binary mode ('wb'). This allows overwriting of any file type (text or binary).
+- ``file.write(b''):`` Writes an empty byte sequence to the opened file, effectively erasing its contents.
+- ``os.unlink(path):`` Deletes the specified file.
+
+**Code snippet (important parts)**:
+```
+import os
+
+# Replace 'path/to/your/directory' with the actual directory containing your files
+root = 'path/to/your/directory'
+
+# Loop through all CSV files in the root directory
+for file in glob.glob(os.path.join(root, "*.csv")):
+  with open(file, 'wb') as f:
+    f.write(b'')  # Write empty bytes to erase content
+  os.unlink(file)  # Delete the file
+```
+**Warning**:
+- Be extra cautious while using ``glob`` as it can process subfolders potentially deleting unintended files.
+- This script permanently deletes files. Make sure you have backups before running it.
+
 **[Back To The Top](#Overview-of-the-Section)**
