@@ -1,8 +1,8 @@
 import yagmail
 import os
 
-SENDER = 'tsokac2@gmail.com'
-RECEIVER = 'bladezero3@gmail.com'
+SENDER = 'email_sender@mail.com'
+RECEIVER = 'email_receiver@mail.com'
 
 subject = 'This is the subject'
 
