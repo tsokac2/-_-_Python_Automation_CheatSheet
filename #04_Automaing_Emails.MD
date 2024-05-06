@@ -6,6 +6,7 @@
 * **[Sending Emails to a CSV List of Contacts](#sending-csv-emails)**
 * **[Sending Emails with Attachments](#emails-attachments)**
 * **[Send an Email with Modified Attachment](#emails-attachments-modify)**
+* **[Send Plain Text Email from Outlook or Hotmail Address](#outlook-emails)**
 
 ### <a name=''></a>
 
@@ -143,6 +144,32 @@ if now.hour == 13 and now.minute == 15:  # Replace 13, 15 with your desired hour
 - The video mentions converting the amount (integer) to a string before writing it to the text file ``(str_content = str(amount))``
 - You'll need to replace placeholders like sender email, password, and CSV file path with your own information.
 - The script uses an app password for Gmail login, not the regular password.
+
+**[Back To The Top](#Overview-of-the-Section)**
+#
+### <a name="outlook-emails">Send Plain Text Email from Outlook or Hotmail Address</a>
+
+To send an email from an Outlook or Hotmail address using Python, you'll utilize the smtplib library, which comes standard with Python and does not require installation. Here are the main steps and commands involved:
+
+**Here are the important commands and code**:
+
+- **Import library**: ``import smtplib``
+- **Set up email content**:
+    - Sender email address
+    - Recipient email address
+    - Password (store securely or use environment variables)
+    - Message (plain text with a subject and body)
+
+- **Start the SMTP server**:
+    - Domain: ``smtp.office365.com``
+    - Port: ``587``
+    - Use ``starttls`` to encrypt the email
+- Login to the server using the sender email address and password
+- Send the email using ``sendmail(sender, receiver, message)``
+- Close the connection using ``quit()``
+
+**[Back To The Top](#Overview-of-the-Section)**
+#
 
 **[Back To The Top](#Overview-of-the-Section)**
 #
