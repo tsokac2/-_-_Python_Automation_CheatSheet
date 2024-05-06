@@ -5,6 +5,9 @@
 * **[Sending an Email Every Day at a Certain Time](#sending-email-dayli)**
 * **[Sending Emails to a CSV List of Contacts](#sending-csv-emails)**
 * **[Sending Emails with Attachments](#emails-attachments)**
+* **[Send an Email with Modified Attachment](#emails-attachments-modify)**
+
+### <a name=''></a>
 
 #
 ### <a name="path-lib">Sending a Single Email with Python</a>
@@ -105,6 +108,41 @@ if now.hour == 13 and now.minute == 15:  # Replace 13, 15 with your desired hour
 
 - The video uses the ``contents`` variable, but the specific variable names might differ depending on your implementation.
 - The video mentions handling attachment paths within folders. You'll need to provide the complete path (folder name and filename) if the attachment is not in the same directory as your Python script.
+
+**[Back To The Top](#Overview-of-the-Section)**
+#
+### <a name="emails-attachments-modify">Send an Email with Modified Attachment</a>
+
+**Concept**
+- Script reads a CSV file containing email records (name, email, amount).
+- Script sends an email to each record with a text file attached containing the amount owed.
+
+**Important libraries**
+
+- ``pandas`` (for handling CSV data)
+- ``smtplib`` (for sending emails)
+
+**Code Snippets**
+
+1. **Generate Text File Function (``generate_file``)**:
+
+- Takes file name and content as arguments.
+- Opens the file in write mode (``'w'``).
+- Writes the content to the file.
+- Important: This function should likely be improved to avoid tight coupling with extensions (``".txt"``).
+
+2. **Iterate through CSV dataframe**:
+
+- Loops through each row of the dataframe.
+- Calls ``generate_file`` to create a text file with the name (from the row) and amount (from the row).
+- Constructs the email with recipient email, subject, body (including name and amount), and attachment filename (name+".txt").
+- Sends the email using ``smtplib``.
+
+**Additional Notes**
+
+- The video mentions converting the amount (integer) to a string before writing it to the text file ``(str_content = str(amount))``
+- You'll need to replace placeholders like sender email, password, and CSV file path with your own information.
+- The script uses an app password for Gmail login, not the regular password.
 
 **[Back To The Top](#Overview-of-the-Section)**
 #
