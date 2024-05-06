@@ -7,8 +7,7 @@
 * **[Sending Emails with Attachments](#emails-attachments)**
 * **[Send an Email with Modified Attachment](#emails-attachments-modify)**
 * **[Send Plain Text Email from Outlook or Hotmail Address](#outlook-emails)**
-
-### <a name=''></a>
+* **[Send a Rich HTML Email from Outlook or Hotmail](#html-email)**
 
 #
 ### <a name="path-lib">Sending a Single Email with Python</a>
@@ -170,6 +169,44 @@ To send an email from an Outlook or Hotmail address using Python, you'll utilize
 
 **[Back To The Top](#Overview-of-the-Section)**
 #
+### <a name="html-email">Send a Rich HTML Email from Outlook or Hotmail</a>
 
+**Import libraries**:
+    - ``from email.mime.text import MIMEText``
+    - ``from email.mime.multipart import MIMEMultipart``
+- Create a MIMEMultipart object for the message.
+- Set the sender, receiver, and subject of the email.
+- Create the HTML code for the body of the email.
+- Create a MIMEText object with the HTML code and set it to HTML format.
+- Attach the MIMEText object to the MIMEMultipart message.
+- Establish a connection with the email server using TLS protocol.
+- Login to the email server.
+- Convert the MIMEMultipart message to a string using the as_string() method.
+- Send the email using the ``sendmail()`` function with sender, receiver, and message string as arguments.
+
+```
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+message = MIMEMultipart()
+
+message['From'] = "sender@hotmail.com"
+message['To'] = "receiver@email.com"
+message['Subject'] = "Hello Again"
+
+body = """
+<h1>Hi there</h1>
+<p>There are only two cats flying today.</p>
+"""
+
+mimetext = MIMEText(body, 'html')
+message.attach(mimetext)
+
+# Then rest of the code for sending the email...
+```
 **[Back To The Top](#Overview-of-the-Section)**
 #
+### <a name="html-attachment">Send Rich HTML Email with Attachment from Outlook or Hotmail</a>
+
+**[Back To The Top](#Overview-of-the-Section)**
+
