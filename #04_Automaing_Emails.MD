@@ -93,7 +93,7 @@ if now.hour == 13 and now.minute == 15:  # Replace 13, 15 with your desired hour
 3. **Import libraries and set variables**: In your Python code, import ``yagmail`` and set variables for the recipient's email address (e.g., using a disposable email service like dropmail.me) and the path to your attachment file.
 4. **Construct the recipient list**: The ``yagmail`` library expects the recipient email in a list format. Even for a single recipient, you need to convert it to a list. Here's an example assuming the recipient email is stored in a variable named ``recipient_email``:
 
-``recipient_list = [recipient_email]``
+    ``recipient_list = [recipient_email]``
 
 5. **Attach the file**: Add the path to your attachment file to the recipient list. The code will automatically handle attaching the file:
     ```
