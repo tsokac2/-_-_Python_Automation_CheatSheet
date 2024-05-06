@@ -2,6 +2,9 @@
 
 ### Overview of the Section
 * **[Sending a Single Email with Python](#sending-email)**
+* **[Sending an Email Every Day at a Certain Time](#sending-email-dayli)**
+* **[Sending Emails to a CSV List of Contacts](#sending-csv-emails)**
+* **[Sending Emails with Attachments](#emails-attachments)**
 
 #
 ### <a name="path-lib">Sending a Single Email with Python</a>
@@ -17,7 +20,91 @@ Here are the important points:
 
 **[Back To The Top](#Overview-of-the-Section)**
 #
+### <a name="sending-email-dayli">Sending an Email Every Day at a Certain Time</a>
 
+Import ``datetime`` library as ``dt``: ``from datetime import datetime as dt``
+
+```
+* Use a loop to continuously check the time.
+* Inside the loop:
+    * Get the current time using `dt.now()`.
+    * Extract the hour and minute using `.hour` and `.minute`.
+    * Use an `if` statement to check if the current hour and minute match your desired time.
+* If the condition is met (time matches), call the function to send the email.
+
+**Important code:**
+
+```python
+if now.hour == 13 and now.minute == 15:  # Replace 13, 15 with your desired hour and minute
+    # Your function to send email here
+```
+**Additional notes**:
+- The script checks every minute by default. You can modify the loop interval for less frequent checks.
+- Remember to replace the placeholder email content and recipient address with your own information.
+- You'll need to configure your email credentials securely (not shown in the text).
+
+**[Back To The Top](#Overview-of-the-Section)**
+#
+### <a name="sending-csv-emails">Sending Emails to a CSV List of Contacts</a>
+
+**Important libraries**:
+``pandas`` (used for working with CSV files)
+
+**Code Snippets**:
+
+1. **Reading CSV data into a Pandas DataFrame**:
+    ```
+    import pandas as pd
+
+    df = pd.read_csv("contacts.csv")
+    ```
+
+2. **Iterating over rows in a DataFrame**:
+    ```
+    for index, row in df.iterrows():
+    # your code here to process each row
+    ```
+3. **Accessing data from a specific column in a row**:
+    ```
+    email = row["email"]  # assuming "email" is the column name
+    name = row["name"]  # assuming "name" is the column name
+    ```
+
+4. **Using f-strings for dynamic content**:
+    ```
+    contents = f"Hi {name}, {message}"
+    ```
+**Additional Notes**:
+- The code uses secrets to store sensitive information like passwords.
+- The script sends an email to each recipient listed in the "email" column of the CSV file.
+
+**[Back To The Top](#Overview-of-the-Section)**
+#
+### <a name="emails-attachments">Sending Emails with Attachments</a>
+
+**Libraries**:
+
+``yagmail``: This library simplifies sending emails through Gmail in Python.
+
+**Steps**:
+
+1. **Set up Gmail app password**1. : You'll need to create an app password for your Gmail account and store it securely. This is because you shouldn't directly use your Gmail password in the code.
+2. **Prepare your attachment**: Create a file (e.g., ``text.txt``) that you want to attach to the email.
+3. **Import libraries and set variables**: In your Python code, import ``yagmail`` and set variables for the recipient's email address (e.g., using a disposable email service like dropmail.me) and the path to your attachment file.
+4. **Construct the recipient list**: The ``yagmail`` library expects the recipient email in a list format. Even for a single recipient, you need to convert it to a list. Here's an example assuming the recipient email is stored in a variable named ``recipient_email``:
+
+``recipient_list = [recipient_email]``
+
+5. **Attach the file**: Add the path to your attachment file to the recipient list. The code will automatically handle attaching the file:
+    ```
+    recipient_list.append("text.txt")  # Assuming "text.txt" is your attachment filename
+    ```
+6. **Send the email**: Use ``yagmail`` to send the email with the recipient list and the content of your email (if any).
+
+**Additional notes**:
+
+- The video uses the ``contents`` variable, but the specific variable names might differ depending on your implementation.
+- The video mentions handling attachment paths within folders. You'll need to provide the complete path (folder name and filename) if the attachment is not in the same directory as your Python script.
 
 **[Back To The Top](#Overview-of-the-Section)**
 #

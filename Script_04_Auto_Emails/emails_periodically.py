@@ -11,7 +11,7 @@ Here is the content of the email
 Hi!
 """
 while True:
-    yag = yagmail.SMTP(user.SENDER, password=os.getenv('PASSWORD'))
+    yag = yagmail.SMTP(user.SENDER, password=os.getenv('PASSWORD'))  # PASSWORD value stored in env file
     yag.send(to=RECEIVER, subject=subject, contents=contents)
     print("Email Sent!")
     time.sleep(60)
