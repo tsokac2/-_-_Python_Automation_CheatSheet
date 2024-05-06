@@ -13,16 +13,17 @@ def generate_file(filename, content):
 
 for index, row in df.iterrows():
     name = row['name']
+    filename = name + ".txt"
     amount = row['amount']
     receiver_email = row['email']
 
-    generate_file(row['name'], row['amount'])
+    generate_file(filename, amount)
 
     subject = "This is the subject!"
     contents = [f""" 
     Hey, {name} you have to pay {amount}
     Bill is attached!""",
-    name,
+    filename,
     ]
 
     yag.send(to=receiver_email, subject=subject, contents=contents)
