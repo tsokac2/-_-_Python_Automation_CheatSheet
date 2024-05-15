@@ -206,7 +206,7 @@ message.attach(mimetext)
 ```
 **[Back To The Top](#Overview-of-the-Section)**
 #
-### <a name="html-attachment">Send Rich HTML Email with Attachment from Outlook or Hotmail</a>
+### <a name="html-attachmentpc re">Send Rich HTML Email with Attachment from Outlook or Hotmail</a>
 
 **[Back To The Top](#Overview-of-the-Section)**
 
