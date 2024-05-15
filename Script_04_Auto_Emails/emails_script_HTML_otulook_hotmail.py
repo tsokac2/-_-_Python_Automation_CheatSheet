@@ -1,6 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.multipart import MIMEBase 
 
 SENDER = 'youremail@hotmail.com'
 RECEIVER = 'receiver@gmail.com'
@@ -19,6 +20,16 @@ Let's hope for more!
 
 mimetext = MIMEText(body, 'html')
 message.attach(mimetext)
+
+
+# Adding attachment logic
+
+attachment_path = "<defin_file_path>"
+attachment_file = open(attachment_path, 'rb')
+payload = MIMEBase('application', 'octate-stream')
+payload.set_payload(attachment_file.read())
+payload.add_header('Conten-Disposition', 'attachment', filename=attachment_path)
+message.attach(payload)
 
 
 SERVER = smtplib.SMTP('smtp.office365.com', 587)
