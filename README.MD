@@ -5,6 +5,11 @@
 * **[Building APIs](https://github.com/tsokac2/-_-_Python_Automation_CheatSheet/blob/main/%2302_APIs_Building_APIs.MD#custom-api)**
 * **[Working with Computer Files and Folders](https://github.com/tsokac2/-_-_Python_Automation_CheatSheet/blob/main/%2303_Computer_Files_and_Folders.MD)**
 * **[Automating Emails](https://github.com/tsokac2/-_-_Python_Automation_CheatSheet/blob/main/%2304_Automaing_Emails.MD)**
+* **[Automating Emails](https://github.com/tsokac2/-_-_Python_Automation_CheatSheet/blob/main/%2304_Automaing_Emails.MD)**
+* **[Generating PDFs](https://github.com/tsokac2/-_-_Python_Automation_CheatSheet/blob/main/%2304_Automaing_Emails.MD)**
+
+
+
 
 #
 ### Overview
